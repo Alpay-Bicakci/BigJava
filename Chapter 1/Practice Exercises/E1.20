@@ -1,0 +1,26 @@
+import javax.swing.*;
+
+public class SalesTax {
+    public static void main(String[] args) {
+
+        JFrame jFrame = new JFrame();
+
+        String[][] tableData = 
+                {{"01", "Alaska", "0%"},
+                {"02", "Nebraska", "5.5%"},
+                {"03", "Florida", "6%"},
+                {"04", "Kansas", "6.5%"},
+                {"05", "California", "7.25%"}};
+
+        String[] tableColumn = {"List", "State", "Sales tax"};
+
+        JTable jTable = new JTable(tableData, tableColumn);
+
+        jTable.setBounds(30, 40, 230, 280);
+
+        JScrollPane jScrollPane = new JScrollPane(jTable);
+        jFrame.add(jScrollPane);
+        jFrame.setSize(350, 300);
+        jFrame.setVisible(true);
+    }
+}

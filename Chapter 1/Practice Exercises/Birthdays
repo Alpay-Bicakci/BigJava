@@ -1,0 +1,26 @@
+import javax.swing.*;
+
+public class Birthdays {
+    public static void main(String[] args) {
+
+        JFrame jFrame = new JFrame();
+
+        String[][] tableData =
+                       {{"Jack", "August", "5"},
+                        {"Daniel", "June", "12"},
+                        {"Laura", "May", "27"},
+                        {"Alice", "October", "9"},
+                        {"Paul", "March", "17"}};
+
+        String[] tableColumn = {"Name", "Month", "Day"};
+
+        JTable jTable = new JTable(tableData, tableColumn);
+
+        jTable.setBounds(30, 40, 230, 280);
+
+        JScrollPane jScrollPane = new JScrollPane(jTable);
+        jFrame.add(jScrollPane);
+        jFrame.setSize(350, 250);
+        jFrame.setVisible(true);
+    }
+}

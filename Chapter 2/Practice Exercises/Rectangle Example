@@ -1,0 +1,36 @@
+import java.awt.Graphics;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+
+public class Rectangle {
+  public int x;
+  public int y;
+  public int width, height;
+
+  public Rectangle(int x, int y, int w, int h) {
+    this.x = x;
+    this.y = y;
+    width = w;
+    height = h;
+
+  }
+
+  public static void main(String[] args) {
+    Rectangle box = new Rectangle(5, 10, 20, 30);
+    JFrame window = new JFrame();
+    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    window.setBounds(30, 30, 300, 300);
+    window.getContentPane().add(new JComponent() {
+      Rectangle myBox = box;
+      public void paint(Graphics g) {
+        g.drawRect(myBox.x, myBox.y, myBox.width, myBox.height);
+      }
+
+    });
+    window.setVisible(true);
+  }
+  @Override
+  public String toString() {
+    return "Rectangle with location {" + x + "," + y + "}, width: " + width + ", height: " + height;
+  }
+}
